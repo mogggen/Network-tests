@@ -1,6 +1,25 @@
-# Network-tests
+# Glossor
 
-contains:
-* 4 Exampapers
-* some of the topic and keywords mentioned in the old Exampapers.
-* more
+IP
+DNS
+DHCP
+NAT
+URL
+URI
+OSI
+TCP
+UDP
+HTTP
+HTTPS
+
+Sockets
+Serialize
+Frame
+Packet
+
+Transport Layer
+Data-Link
+Presentation
+Network
+Physical
+Session
