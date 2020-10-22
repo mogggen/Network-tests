@@ -1,0 +1,54 @@
+* Molntjänst
+våran molntjänst har en socket som väntar på inkommande trafik från Noder via ett TCP nätverk, därefter skickas klienternas data till en lastbalanserare som avgör vilken av dem aktiva servrarna som har minst att göra.
+
+När last balanseraren hittar en lämplig server så läggs uppdraget i kö, sedan när filen har kommit längst fram i kön så krypteras den.
+
+Sedan läggs filen på kö till att skickas till klienten för att se om klient fortfarande väntar på den krypterade filen.
+
+Om klienten är kvar på tråden så skickas filen i packet via ett TCP-protocol. När klienten svarar att den har tagit emot alla packet så stängs ärendet och servern avlastar uppgiften för att göra rum för nya.
+
+* Security & cheating
+1. En checksum skapas för varje spelare och måste godkännas av de andra spelarna vid början av sessionen. Om en lösning inte hittas så blir de spelare som har ogiltig checksum bannad från att fortsätta spela, och servern letar upp nya spelare.
+
+2. När 
+
+* Nätverk och spel
+dead reckoning är då man använder sig av tidigare accelerations- och hastighetsdata för en projektil för att räkna ut vart den är på väg, och kommer vara, vid en viss tidpunkt. 
+
+Istället för att alla klienter skickar packet 60 gånger per sekund, vilket blir väldigt krävande för servern att hantera. Då är dead reckoning en väldigt bra idé, då man kan be klienten använda sina resurser för att räkna ut vart övriga klienter är på väg. Detta lägger mindre arbete på servern så den kan skicka och ta emot mer relevanta packet snabbare.
+
+* Url
+Url består av ett domännamn, top-level domän och ett protocol.
+
+* Non-Blocking IO
+Channels är en ström som kan både skriva till och läsas från.
+
+* Sockets
+a. En TCP server öppnar en socket vid start och väntar på anslutningar från klienter, när en klient ansluter sig så meddelar servern tillbaka att den såg anslutningen.
+
+b. en UDP client försöker ansluta sig till servern, om den försöker ansluta sig till en TCP server så får den sannolikt en bekräftelse om att anslutningen var lyckad. I övriga fall får den bara lita på att packeten kommer fram.
+
+* OSI
+a. IPv6 viktigaste uppgift är att distribuera en unik address till varje host på nätverket. Den kollar ej om alla data kommer fram, den delen av protocol:et används till att lagra 128-bitar addressering, bland annat.
+
+b. Ethenernet skickar trafik, och använder sig av hostens MAC-address för att göra det.
+
+c. TCP ser till att snabba CPU:er inte behöver vänta på långsamma nätverksförfrågningar. Den ser också till att alla packet kommer fram genom att dubbelkolla med klienten, annars skickas det på nytt så många gånger som behövs tills alla packet är framme.
+
+* Trådar
+a. Syncronisering krävs till exempel då flera trådar ska använda sig av samma resurs för att undvika att 'deadlock'.
+
+En annan anledning att syncronisera är när tråd A och B har i uppgift att addera resurs C med ett. men eftersom både tråd A och B får uppgiften samtidigt så blir det slutgiltiga resultatet alltså ett mer (C + 1), istället för två mer som var vad programmeraren ville ha (C + 2).
+
+b. Deadlock uppstår då två stycken trådar körs samtidigt, där Tråd a använder sig av resurs B, och tråd B använder sig av resurs A. Men för att slutföra nuvarande uppgift så behöver tråd A tillgång till resurs A, och tråd B tillgång till resurs B, så varken tråd A eller B kan överlämna eller få de resurser som behövs, alltså har vi ett 'Deadlock'.
+
+d. En tråd ger programmet det resultat som förväntades.
+En tråd ger programmet ett oväntat resutat.
+
+* Serialisering
+a. Serialisering är då man tar alla medlemmar i ett object och konverterar dem till en språkneutral okttetström, som antingen kan lagras i en fil. eller skickas till en data bas eller till ett nätverk.
+
+b. om en class har modifern 'static' går den inte att serialisera.
+
+* Applikationsprotokoll
+a. Headern ska allolkera: fyra Bytes värt av utrymme till protocol versionen. ...
