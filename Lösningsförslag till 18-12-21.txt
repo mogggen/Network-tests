@@ -22,6 +22,7 @@ Url består av ett domännamn, top-level domän och ett protocol.
 
 * Non-Blocking IO
 Channels är en ström som kan både skriva till och läsas från.
+Channels använder sig av en input buffer och en output buffer som den läser och skriver till för att kunna transportera data till och från clienter och servrar.
 
 * Sockets
 a. En TCP server öppnar en socket vid start och väntar på anslutningar från klienter, när en klient ansluter sig så meddelar servern tillbaka att den såg anslutningen.
