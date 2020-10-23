@@ -1,0 +1,4 @@
+* Nätverks och spel
+a. antingen så går det att dela upp serverna på fleara spelare, eller så delas spelvärlden upp på flera serverar.
+b. En nackdel med att dela upp spelare så att det är, ungefär, lika många spelare per server, är att det krävs mycket mer trafik mellan serverar. Det finns också större risk för servar att desyncroniseras mellan varandra.
+En nackdel med att dela upp servrarna på spelvärlden är om ett välbefolkat område placeras på en server, med många spelare så blir denna server mer belastad i jämförelse med mindre tätbefolkade områden på andra områden som sitter på andra serverar. Detta göra att vissa servrar får jobba riktigt hårt medans andra serverar får lite att göra.
