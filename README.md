@@ -1,3 +1,4 @@
+https://www.student.ladok.se/student/#/aktuell
 # Glossor
 
 Förkortningar:
@@ -39,4 +40,3 @@ Förkortningar:
 * 3 Network layer
 * 2 Data link layer
 * 1 Physical layer
-* 
